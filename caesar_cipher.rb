@@ -1,6 +1,7 @@
 # Create a function that uses the Caesar Cipher technique to encrypt a string
 
 def caesar_cipher(str, shift)
+  result = ""
   num_spaces = 0
 
   # Shift left making sure that if the number exceeds 25 it will shift by the correct number of spaces
@@ -12,10 +13,14 @@ def caesar_cipher(str, shift)
   # Convert the characters to character code by the number of spaces
   cipher_char = char.ord - num_spaces
 
-  puts cipher_char
-
+  # Space character condition, just append it 
+  if (char.ord == 32)
+    result << char
+  end
 }
+
+
 end
 
 # Test result
-caesar_cipher("A", 1)
+caesar_cipher("A A", 1)
